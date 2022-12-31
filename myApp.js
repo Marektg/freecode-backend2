@@ -5,6 +5,7 @@ let app = express();
 let filePath = __dirname + "/views/index.html";
 let publicPath = __dirname + "/public";
 console.log(variable.parsed.MESSAGE_STYLE);
+console.log("test");
 app.get("/", function (req, res) {
 
     res.sendFile(filePath)
