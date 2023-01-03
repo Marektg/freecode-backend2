@@ -22,8 +22,11 @@ app.get("/json", function (req, res) {
         message: `${message}`
     });
 });
-app.get("/now", function middleware(req, res) {
+app.get("/now", (req, res, next) => {
     req.time = new Date().toString();
+    next();
+},
+    (req,res) => {
     res.json({
         time: `${req.time}`
     })
