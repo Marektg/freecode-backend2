@@ -24,8 +24,14 @@ app.get("/json", function (req, res) {
 });
 app.get("/:word/echo", (req, res) => {
     
-        res.json({
-            word: `${req.params.word}`
+    res.json({
+        word: `${req.params.word}`
+    })
+});
+app.get("/name", (req, res) => {
+    const { first: firstName, last: lastName } = req.query;
+    res.json({
+        name: `${firstName} ${lastName}`
     })
 })
 app.get("/now", (req, res, next) => {
