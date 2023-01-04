@@ -22,6 +22,12 @@ app.get("/json", function (req, res) {
         message: `${message}`
     });
 });
+app.get("/:word/echo", (req, res) => {
+    
+        res.json({
+            word: `${req.params.word}`
+    })
+})
 app.get("/now", (req, res, next) => {
     req.time = new Date().toString();
     next();
